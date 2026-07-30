@@ -346,6 +346,14 @@ li::marker { color: #78716c; }
   margin-bottom: 24px;
 }
 
+.not-found { max-width: 560px; }
+.not-found h1 { margin-bottom: 12px; }
+.not-found > p:not(.eyebrow) {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.08rem;
+  margin-bottom: 24px;
+}
+
 .about-page .page-hero { margin-bottom: 32px; }
 .about-photo { margin: 0 0 40px; }
 .about-photo img {

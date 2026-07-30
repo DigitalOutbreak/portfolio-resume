@@ -2,11 +2,13 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import aboutPhoto from '../assets/joey-alvarado-colorful-wall.jpg';
+import { aboutStructuredData } from '../data/profile';
 ---
 
 <BaseLayout
-  title="About Joey Alvarado | Software Developer"
+  title="About Joey Alvarado | Chicago Software Developer"
   description="Learn more about Joey Alvarado, a software developer in the Chicago area with a background in web development and a growing focus on Rust and backend systems."
+  structuredData={aboutStructuredData}
 >
   <article class="about-page">
     <header class="page-hero">

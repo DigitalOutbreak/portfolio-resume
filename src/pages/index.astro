@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { faGithub, faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { featuredProjects } from '../data/projects';
+import { homeStructuredData } from '../data/profile';
 
 const githubPath = faGithub.icon[4] as string;
 const linkedinPath = faLinkedin.icon[4] as string;
 const xPath = faXTwitter.icon[4] as string;
 ---
-<BaseLayout>
+<BaseLayout structuredData={homeStructuredData}>
   <section class="profile">
     <img
       src="/joey-alvarado-portrait-336.webp"

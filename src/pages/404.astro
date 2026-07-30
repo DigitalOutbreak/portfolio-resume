@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Joey Alvarado"
+  description="The requested page could not be found."
+  noindex={true}
+  includeCanonical={false}
+>
+  <section class="not-found">
+    <p class="eyebrow">404</p>
+    <h1>That page isn’t here.</h1>
+    <p>The link may be outdated, or the page may have moved. You can return home or continue to my software projects.</p>
+    <div class="actions">
+      <a class="button button-primary" href="/">Return home</a>
+      <a class="button" href="/projects">View projects</a>
+    </div>
+  </section>
+</BaseLayout>

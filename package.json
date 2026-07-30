@@ -12,6 +12,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "astro": "^7.1.6"
   },
