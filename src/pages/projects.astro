@@ -10,7 +10,7 @@ import { projects } from '../data/projects';
   </section>
   <section class="section">
     <div class="projects">
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <article class="project">
           <div class="project-meta"><span>{project.number}</span><span>{project.type}</span></div>
           <div class="project-body">
@@ -21,8 +21,9 @@ import { projects } from '../data/projects';
                   alt={project.imageAlt ?? ''}
                   width={project.imageWidth ?? 1200}
                   height={project.imageHeight ?? 675}
-                  loading="lazy"
+                  loading={index === 0 ? 'eager' : 'lazy'}
                   decoding="async"
+                  fetchpriority={index === 0 ? 'high' : 'auto'}
                 />
               </a>
             )}

@@ -9,7 +9,15 @@ const xPath = faXTwitter.icon[4] as string;
 ---
 <BaseLayout>
   <section class="profile">
-    <img src="/joey-alvarado-portrait.jpg" alt="Joey Alvarado" width="176" height="176" />
+    <img
+      src="/joey-alvarado-portrait-336.webp"
+      srcset="/joey-alvarado-portrait-168.webp 168w, /joey-alvarado-portrait-336.webp 336w, /joey-alvarado-portrait-504.webp 504w"
+      sizes="168px"
+      alt="Joey Alvarado"
+      width="168"
+      height="168"
+      fetchpriority="high"
+    />
     <div>
       <h1>Hi, I'm Joey.</h1>
       <p class="role">Software Developer</p>

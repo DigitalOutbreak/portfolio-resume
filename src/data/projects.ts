@@ -167,7 +167,7 @@ export const projects: Project[] = [
       'Ongoing client work spanning the public website, local-search pages, dashboard and CRM planning, and customer workflows.',
     tags: ['Astro', 'Web development', 'Internal tools', 'CRM'],
     live: 'https://worldofdoors.org',
-    image: '/projects/world-of-doors.png',
+    image: '/projects/world-of-doors.webp',
     imageAlt: 'World of Doors website shown on a desktop browser',
     imageWidth: 1200,
     imageHeight: 760,
