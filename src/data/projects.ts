@@ -36,7 +36,7 @@ export const projects: Project[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageCaption: 'Solbook learning terminal backed by the live Rust matching engine.',
-    repositoryNote: 'The repository is private while I continue refining the project.',
+    repository: 'https://github.com/DigitalOutbreak/rust-order-book',
     problem:
       'I wanted to understand order-book behavior through a core small enough to reason about, but strict enough that fills, ordering, and replay could be checked instead of hand-waved.',
     contribution: [
@@ -51,7 +51,7 @@ export const projects: Project[] = [
       'Use sequence numbers, invariant checks, property tests, benchmarks, and fuzz targets to make behavior measurable.',
     ],
     verification: [
-      'All 44 unit, integration, property, and documentation tests pass with the locked dependency graph.',
+      'Unit, integration, property, replay, serialization, and documentation tests pass with the locked dependency graph.',
       'Clippy passes across all targets and features with warnings denied.',
       'Replay tests confirm the same command sequence produces the same events and final book state.',
     ],
