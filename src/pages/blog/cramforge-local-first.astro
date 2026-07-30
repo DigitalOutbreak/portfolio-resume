@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Why CramForge keeps books and study material local | Joey Alvarado"
+  description="How CramForge imports DRM-free EPUBs and creates portable Markdown study packs."
+>
+  <article class="article">
+    <p class="eyebrow">Local-first</p>
+    <h1>Why CramForge keeps books and study material local</h1>
+    <div class="article-copy">
+      <p>CramForge is a study-app starter for DRM-free EPUBs. The public repository ships empty because a reusable tool should not bundle someone else’s books, private notes, or a required AI provider.</p>
+
+      <h2>The import boundary</h2>
+      <p>An import creates the reader content and a predictable Markdown workspace:</p>
+      <pre><code>study-materials/&lt;book-slug&gt;/
+  README.md
+  chapters/chNN.md
+  study-guide.md
+  agent-instructions.md</code></pre>
+      <p>The reader handles the book. Markdown handles the handoff to summaries, flashcards, quizzes, cram notes, or any other study format.</p>
+
+      <h2>Why Markdown</h2>
+      <p>Markdown keeps the study material portable. A user can edit it directly, version it, or hand it to the coding agent or model they already use. The project does not need to own that relationship.</p>
+
+      <h2>What I check</h2>
+      <p>The useful path is an actual import: run the build and lint checks, import a book the user has the right to use, confirm its chapter and asset output, open it in the reader, and inspect the generated study-pack files outside the app.</p>
+
+      <p><a href="https://github.com/DigitalOutbreak/cramforge" target="_blank" rel="noreferrer">View CramForge on GitHub ↗</a></p>
+    </div>
+  </article>
+</BaseLayout>

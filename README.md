@@ -19,6 +19,10 @@ npm run dev
 npm run build
 ```
 
+The downloadable résumé is generated from `scripts/generate_resume.py`.
+Run `python3 scripts/generate_resume.py` after editing its content.
+The social card and favicon source layouts are in `scripts/social-card.html` and `scripts/favicon.html`.
+
 ## Site
 
 [www.joeyalvarado.dev](https://www.joeyalvarado.dev)

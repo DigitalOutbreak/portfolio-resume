@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Résumé | Joey Alvarado" description="Software development résumé for Joey Alvarado.">
+  <article class="resume">
+    <header class="resume-header">
+      <div>
+        <p class="eyebrow">Résumé</p>
+        <h1>Joey Alvarado</h1>
+        <p class="resume-title">Software Developer</p>
+      </div>
+      <a class="button button-primary" href="/joey-alvarado-resume.pdf" download>Download PDF</a>
+    </header>
+
+    <p class="resume-contact">
+      Chicago area · <a href="mailto:joeynalvarado@gmail.com">joeynalvarado@gmail.com</a> ·
+      <a href="https://github.com/DigitalOutbreak" target="_blank" rel="noreferrer">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/joeyalvarado" target="_blank" rel="noreferrer">LinkedIn</a>
+    </p>
+
+    <section class="resume-section">
+      <h2>Summary</h2>
+      <p>Software developer with experience shipping websites and internal tools for small businesses. My background is in web development and project delivery, and I am expanding that work through Rust, backend systems, and focused software projects.</p>
+    </section>
+
+    <section class="resume-section">
+      <h2>Experience</h2>
+      <article class="resume-entry">
+        <div class="resume-entry-heading">
+          <div>
+            <h3>Freelance Web Developer</h3>
+            <p>Digital Outbreak</p>
+          </div>
+          <p>May 2025 – Present</p>
+        </div>
+        <ul>
+          <li>Build and maintain websites and internal tools for small businesses.</li>
+          <li>Own projects from discovery through launch, including design, implementation, revisions, and ongoing fixes.</li>
+          <li>Develop dashboards and CRM workflows that support lead management and day-to-day operations.</li>
+        </ul>
+      </article>
+      <article class="resume-entry">
+        <div class="resume-entry-heading">
+          <div>
+            <h3>Web Developer &amp; Project Manager</h3>
+            <p>SEOLEVELUP</p>
+          </div>
+          <p>Sep 2022 – May 2025</p>
+        </div>
+        <ul>
+          <li>Built responsive marketing websites and landing pages using WordPress, Webflow, Framer, and custom CSS.</li>
+          <li>Turned Figma mockups into finished pages and coordinated requirements, revisions, and launches.</li>
+          <li>Used Python for small internal tools and workflow experiments.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="resume-section">
+      <div class="split-heading"><h2>Selected projects</h2><a href="/projects">View case studies</a></div>
+      <article class="resume-project">
+        <h3>Local Web Clipper</h3>
+        <p>Added local-folder, Downloads, and Clipboard destinations to an open-source TypeScript browser extension while preserving its existing extraction and template pipeline.</p>
+      </article>
+      <article class="resume-project">
+        <h3>CramForge</h3>
+        <p>Built a local-first Next.js starter that imports DRM-free EPUBs and creates Markdown study packs without bundling private books or requiring one model provider.</p>
+      </article>
+      <article class="resume-project">
+        <h3>Workflow</h3>
+        <p>Published reusable project scaffolding with context documents, feature workflows, cleanup tools, and delivery guidance across multiple coding agents.</p>
+      </article>
+    </section>
+
+    <section class="resume-section">
+      <h2>Skills</h2>
+      <p><strong>Languages:</strong> Rust, TypeScript, JavaScript, Python, HTML, CSS</p>
+      <p><strong>Web:</strong> React, Next.js, Astro, WordPress, Webflow, Framer</p>
+      <p><strong>Tools:</strong> Git, GitHub, Figma, SQLite</p>
+    </section>
+  </article>
+</BaseLayout>

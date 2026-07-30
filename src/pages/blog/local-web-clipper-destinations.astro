@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Adding local destinations to a web clipper | Joey Alvarado"
+  description="How Local Web Clipper handles local folders, Downloads, Clipboard output, and browser permissions."
+>
+  <article class="article">
+    <p class="eyebrow">Browser extensions</p>
+    <h1>Adding local destinations to a web clipper</h1>
+    <div class="article-copy">
+      <p>Local Web Clipper started as a fork of Obsidian Web Clipper. I wanted to preserve its extraction and template behavior while letting people save the generated Markdown without requiring Obsidian.</p>
+
+      <h2>The browser constraint</h2>
+      <p>A browser extension cannot silently write to any path on someone’s computer. Direct folder access requires an explicit picker and permission, and the API is not available everywhere.</p>
+
+      <h2>The boundary I added</h2>
+      <p>I kept the change after Markdown generation and put destination-specific behavior behind one save interface:</p>
+      <pre><code>extract page data
+  → apply template
+  → generate Markdown
+  → ClipDestination.save()</code></pre>
+      <p>The local-directory destination stores the chosen handle in IndexedDB and requests permission again when needed. The Downloads destination uses relative browser download paths. Clipboard remains the simplest manual fallback.</p>
+
+      <h2>What I check</h2>
+      <p>The destinations need separate checks because each one depends on different browser behavior. I build and load the Chromium extension locally, run the existing tests, and confirm folder permission, filename conflicts, Downloads fallback, and Clipboard output independently.</p>
+
+      <p><a href="https://github.com/DigitalOutbreak/local-web-clipper" target="_blank" rel="noreferrer">View the repository and architecture notes ↗</a></p>
+    </div>
+  </article>
+</BaseLayout>

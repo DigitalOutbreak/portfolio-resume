@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects, type Project } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props as Props;
+---
+<BaseLayout
+  title={`${project.name} Case Study | Joey Alvarado`}
+  description={`${project.title} Read what I built, the decisions behind it, and how the work is checked.`}
+>
+  <article class="case-study">
+    <header class="page-hero">
+      <p class="eyebrow">{project.type}</p>
+      <h1>{project.name}</h1>
+      <p>{project.summary}</p>
+      <div class="actions project-actions">
+        {project.repository && (
+          <a class="button button-primary" href={project.repository} target="_blank" rel="noreferrer">
+            View repository <span aria-hidden="true">↗</span>
+          </a>
+        )}
+        {project.live && (
+          <a class:list={['button', !project.repository && 'button-primary']} href={project.live} target="_blank" rel="noreferrer">
+            View live site <span aria-hidden="true">↗</span>
+          </a>
+        )}
+        {project.packageUrl && (
+          <a class="button" href={project.packageUrl} target="_blank" rel="noreferrer">
+            View package <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </div>
+    </header>
+
+    {project.image && (
+      <figure class="case-study-image">
+        <img src={project.image} alt={project.imageAlt ?? ''} width="1200" height="760" />
+        <figcaption>Production website</figcaption>
+      </figure>
+    )}
+
+    <section class="case-study-section">
+      <h2>The problem</h2>
+      <p>{project.problem}</p>
+    </section>
+
+    <section class="case-study-section">
+      <h2>What I built</h2>
+      <ul>
+        {project.contribution.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="case-study-section">
+      <h2>Key decisions</h2>
+      <ul>
+        {project.decisions.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="case-study-section">
+      <h2>How I check the work</h2>
+      <ul>
+        {project.verification.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <footer class="case-study-footer">
+      <a href="/projects">← Back to projects</a>
+    </footer>
+  </article>
+</BaseLayout>

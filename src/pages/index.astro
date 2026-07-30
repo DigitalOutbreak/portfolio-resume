@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { faGithub, faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { featuredProjects } from '../data/projects';
 
 const githubPath = faGithub.icon[4] as string;
 const linkedinPath = faLinkedin.icon[4] as string;
@@ -40,7 +41,7 @@ const xPath = faXTwitter.icon[4] as string;
     <ul class="focus-list">
       <li><strong>Client websites:</strong> Design, development, revisions, launches, and ongoing fixes.</li>
       <li><strong>Internal tools:</strong> Dashboards and CRM workflows that help small businesses manage their work.</li>
-      <li><strong>Rust and backend:</strong> Smaller projects that help me learn systems concepts by building them.</li>
+      <li><strong>Rust and backend:</strong> Small, focused programs around ownership, error handling, file parsing, and testing.</li>
     </ul>
   </section>
   <section class="home-section">
@@ -61,19 +62,25 @@ const xPath = faXTwitter.icon[4] as string;
   <section class="home-section">
     <div class="split-heading"><h2>Selected projects</h2><a href="/projects">View all</a></div>
     <ul class="entry-list">
-      <li><a class="entry-card" href="https://github.com/DigitalOutbreak/local-web-clipper" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span><h3>Local Web Clipper</h3><p>Save clipped pages as Markdown without requiring Obsidian.</p></a></li>
-      <li><a class="entry-card" href="https://github.com/DigitalOutbreak/cramforge" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span><h3>CramForge</h3><p>A local-first study app starter for DRM-free EPUBs.</p></a></li>
-      <li><a class="entry-card" href="https://worldofdoors.org" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span><h3>World of Doors</h3><p>Client website and ongoing internal-tool work.</p></a></li>
+      {featuredProjects.map((project) => (
+        <li>
+          <a class="entry-card" href={`/projects/${project.slug}`}>
+            <span aria-hidden="true">→</span>
+            <h3>{project.name}</h3>
+            <p>{project.title}</p>
+          </a>
+        </li>
+      ))}
     </ul>
   </section>
   <section class="home-section">
     <div class="split-heading"><h2>Latest note</h2><a href="/blog">View notes</a></div>
     <ul class="entry-list">
-      <li><a class="entry-card" href="/blog/rust-fundamentals"><span aria-hidden="true">›</span><h3>What I'm learning in Rust right now</h3><p>Why I am keeping the projects small while I work through the fundamentals.</p></a></li>
+      <li><a class="entry-card" href="/blog/local-web-clipper-destinations"><span aria-hidden="true">›</span><h3>Adding local destinations to a web clipper</h3><p>The browser constraints behind folder, Downloads, and Clipboard output.</p></a></li>
     </ul>
   </section>
   <section class="home-section">
     <h2>Let's connect</h2>
-    <p class="lead">I am open to software development opportunities. You can find me on <a href="https://www.linkedin.com/in/joeyalvarado" target="_blank" rel="noreferrer">LinkedIn</a>, <a href="https://github.com/DigitalOutbreak" target="_blank" rel="noreferrer">GitHub</a>, or <a href="mailto:joeynalvarado@gmail.com">email me</a>.</p>
+    <p class="lead">I am open to software development opportunities. You can view my <a href="/resume">résumé</a>, find me on <a href="https://www.linkedin.com/in/joeyalvarado" target="_blank" rel="noreferrer">LinkedIn</a> or <a href="https://github.com/DigitalOutbreak" target="_blank" rel="noreferrer">GitHub</a>, or <a href="mailto:joeynalvarado@gmail.com">email me</a>.</p>
   </section>
 </BaseLayout>

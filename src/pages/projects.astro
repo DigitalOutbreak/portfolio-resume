@@ -1,11 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const projects = [
-  { number: '01', type: 'Browser extension', name: 'Local Web Clipper', title: 'Save web content as Markdown without requiring Obsidian.', text: 'I forked an open-source web clipper and added local-folder, downloads, and clipboard destinations while preserving the existing extraction and template workflow.', tags: ['TypeScript', 'Browser extensions', 'File System Access API'], href: 'https://github.com/DigitalOutbreak/local-web-clipper' },
-  { number: '02', type: 'Study tooling', name: 'CramForge', title: 'A local-first study app starter for DRM-free EPUBs.', text: 'Imports books into a chapter reader and creates Markdown study packs that can be used with the coding agent or model of your choice.', tags: ['Next.js', 'TypeScript', 'EPUB', 'Local-first'], href: 'https://github.com/DigitalOutbreak/cramforge' },
-  { number: '03', type: 'Developer tooling', name: 'Workflow', title: 'Reusable project scaffolding for AI-assisted coding.', text: 'A public package that sets up practical project context, feature workflows, cleanup tools, and delivery guidance across several coding agents.', tags: ['Agent skills', 'npm', 'Project scaffolding'], href: 'https://github.com/DigitalOutbreak/workflow' },
-  { number: '04', type: 'Client work', name: 'World of Doors', title: 'Website and internal tools for an operating service business.', text: 'Ongoing work that includes the public website, local search improvements, CRM planning, dashboards, and customer workflows.', tags: ['Astro', 'Web development', 'Internal tools', 'CRM'], href: 'https://worldofdoors.org' },
-];
+import { projects } from '../data/projects';
 ---
 <BaseLayout title="Projects | Joey Alvarado" description="Public software projects and client work by Joey Alvarado.">
   <section class="page-hero">
@@ -21,9 +16,9 @@ const projects = [
           <div class="project-body">
             <p class="project-kicker">{project.name}</p>
             <h2>{project.title}</h2>
-            <p>{project.text}</p>
+            <p>{project.summary}</p>
             <ul class="tags">{project.tags.map((tag) => <li>{tag}</li>)}</ul>
-            <a class="project-link" href={project.href} target="_blank" rel="noreferrer">View project <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href={`/projects/${project.slug}`}>Read case study <span aria-hidden="true">→</span></a>
           </div>
         </article>
       ))}
