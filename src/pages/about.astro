@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import aboutPhoto from '../assets/joey-alvarado-colorful-wall.jpg';
+---
+
+<BaseLayout
+  title="About Joey Alvarado | Software Developer"
+  description="Learn more about Joey Alvarado, a software developer in the Chicago area with a background in web development and a growing focus on Rust and backend systems."
+>
+  <article class="about-page">
+    <header class="page-hero">
+      <p class="eyebrow">About</p>
+      <h1>A little more about me.</h1>
+      <p>I am a software developer in the Chicago area who learns best by building real things.</p>
+    </header>
+
+    <figure class="about-photo">
+      <Image
+        src={aboutPhoto}
+        alt="Joey Alvarado standing in front of a colorful mural"
+        widths={[360, 680, 1020]}
+        sizes="(max-width: 720px) calc(100vw - 32px), 680px"
+        width={1020}
+        format="webp"
+        quality={78}
+        loading="eager"
+      />
+    </figure>
+
+    <div class="article-copy about-copy">
+      <p>I got into software through hands-on web work instead of a traditional computer science program. I learned by building sites for real businesses, solving client problems, and figuring out everything between an idea and a launch.</p>
+
+      <p>Most of my professional experience has been in web development and project delivery. That work taught me how to turn rough requests into finished pages, work closely with clients and designers, and stay responsible for the details after something ships.</p>
+
+      <p>Lately, I have been going deeper into Rust and backend systems. I like understanding how a system behaves, not just getting the interface to look finished. That is why my projects include a matching engine, browser tooling, and local-first study software.</p>
+
+      <p>Outside of work, I like traveling, exploring new places, and keeping up with technology. I am looking for a software role where I can contribute with the web experience I already have while continuing to grow into stronger backend and systems work.</p>
+    </div>
+
+    <div class="actions about-actions">
+      <a class="button button-primary" href="/projects">View projects</a>
+      <a class="button" href="/contact">Get in touch</a>
+    </div>
+  </article>
+</BaseLayout>

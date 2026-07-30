@@ -24,6 +24,7 @@ Primary skills include Rust, TypeScript, JavaScript, Python, HTML, CSS, React, N
 - [Résumé](${siteUrl}/resume): Web résumé with experience, projects, and technical skills
 - [Downloadable résumé](${siteUrl}/joey-alvarado-resume.pdf): One-page PDF résumé
 - [Work history](${siteUrl}/work): Freelance development and previous web development and project management experience
+- [About](${siteUrl}/about): Personal background, approach to learning software, and interests outside work
 - [Contact](${siteUrl}/contact): Professional contact options
 
 ## Selected projects
