@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faGithub, faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+
+const githubPath = faGithub.icon[4] as string;
+const linkedinPath = faLinkedin.icon[4] as string;
+const xPath = faXTwitter.icon[4] as string;
+---
+<BaseLayout>
+  <section class="profile">
+    <img src="/joey-alvarado-portrait.png" alt="Joey Alvarado" width="176" height="264" />
+    <div>
+      <h1>Hi, I'm Joey.</h1>
+      <p class="role">Software Developer</p>
+      <p class="focus">Rust, backend systems, and web development.</p>
+      <div class="actions">
+        <a class="button button-primary" href="/projects">View projects</a>
+        <a class="button" href="/contact">Contact</a>
+      </div>
+      <p class="social-links">
+        <a href="https://github.com/DigitalOutbreak" target="_blank" rel="noreferrer" aria-label="Joey Alvarado on GitHub" title="GitHub"><svg viewBox="0 0 512 512" aria-hidden="true"><path d={githubPath}></path></svg></a>
+        <a href="https://www.linkedin.com/in/joeyalvarado" target="_blank" rel="noreferrer" aria-label="Joey Alvarado on LinkedIn" title="LinkedIn"><svg viewBox="0 0 448 512" aria-hidden="true"><path d={linkedinPath}></path></svg></a>
+        <a href="https://x.com/realjoeyalvara" target="_blank" rel="noreferrer" aria-label="Joey Alvarado on X" title="X"><svg viewBox="0 0 448 512" aria-hidden="true"><path d={xPath}></path></svg></a>
+      </p>
+    </div>
+  </section>
+  <section class="lead">
+    <p>I build websites and internal tools for small businesses. My background is in web development and project delivery, and I am now putting more of my time into Rust and backend systems.</p>
+  </section>
+  <section class="home-section skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Rust (learning), TypeScript, JavaScript, Python, HTML, and CSS</li>
+      <li><strong>Web:</strong> React, Next.js, Astro, WordPress, Webflow, and Framer</li>
+      <li><strong>Tools:</strong> Git, GitHub, Figma, and SQLite</li>
+    </ul>
+  </section>
+  <section class="home-section">
+    <h2>What I work on</h2>
+    <ul class="focus-list">
+      <li><strong>Client websites:</strong> Design, development, revisions, launches, and ongoing fixes.</li>
+      <li><strong>Internal tools:</strong> Dashboards and CRM workflows that help small businesses manage their work.</li>
+      <li><strong>Rust and backend:</strong> Smaller projects that help me learn systems concepts by building them.</li>
+    </ul>
+  </section>
+  <section class="home-section">
+    <div class="split-heading"><h2>Experience</h2><a href="/work">View details</a></div>
+    <div class="work-summary">
+      <article>
+        <p class="quiet">May 2025 – Present</p>
+        <h3>Freelance Web Developer</h3>
+        <p>Digital Outbreak</p>
+      </article>
+      <article>
+        <p class="quiet">Sep 2022 – May 2025</p>
+        <h3>Web Developer &amp; Project Manager</h3>
+        <p>SEOLEVELUP</p>
+      </article>
+    </div>
+  </section>
+  <section class="home-section">
+    <div class="split-heading"><h2>Selected projects</h2><a href="/projects">View all</a></div>
+    <ul class="entry-list">
+      <li><a class="entry-card" href="https://github.com/DigitalOutbreak/local-web-clipper" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span><h3>Local Web Clipper</h3><p>Save clipped pages as Markdown without requiring Obsidian.</p></a></li>
+      <li><a class="entry-card" href="https://github.com/DigitalOutbreak/cramforge" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span><h3>CramForge</h3><p>A local-first study app starter for DRM-free EPUBs.</p></a></li>
+      <li><a class="entry-card" href="https://worldofdoors.org" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span><h3>World of Doors</h3><p>Client website and ongoing internal-tool work.</p></a></li>
+    </ul>
+  </section>
+  <section class="home-section">
+    <div class="split-heading"><h2>Latest note</h2><a href="/blog">View notes</a></div>
+    <ul class="entry-list">
+      <li><a class="entry-card" href="/blog/rust-fundamentals"><span aria-hidden="true">›</span><h3>What I'm learning in Rust right now</h3><p>Why I am keeping the projects small while I work through the fundamentals.</p></a></li>
+    </ul>
+  </section>
+  <section class="home-section">
+    <h2>Let's connect</h2>
+    <p class="lead">I am open to software development opportunities. You can find me on <a href="https://www.linkedin.com/in/joeyalvarado" target="_blank" rel="noreferrer">LinkedIn</a>, <a href="https://github.com/DigitalOutbreak" target="_blank" rel="noreferrer">GitHub</a>, or <a href="mailto:joeynalvarado@gmail.com">email me</a>.</p>
+  </section>
+</BaseLayout>

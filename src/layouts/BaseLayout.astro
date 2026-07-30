@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Joey Alvarado | Software Developer',
+  description = 'Software developer focused on Rust, backend systems, and web development.',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL('/joey-alvarado-portrait.png', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <ClientRouter />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c0c0e'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='30' font-family='Arial' font-weight='700' fill='%23d6ff45'%3EJA%3C/text%3E%3C/svg%3E" />
+    <title>{title}</title>
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Joey Alvarado home">Joey Alvarado</a>
+      <nav aria-label="Primary navigation">
+        <a href="/projects">projects</a><span>/</span>
+        <a href="/work">work</a><span>/</span>
+        <a href="/blog">notes</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer>
+      <span>© {new Date().getFullYear()} • Joey Alvarado</span>
+      <a href="#top">back to top</a>
+    </footer>
+  </body>
+</html>
