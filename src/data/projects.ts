@@ -11,6 +11,10 @@ export interface Project {
   packageUrl?: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageCaption?: string;
+  repositoryNote?: string;
   problem: string;
   contribution: string[];
   decisions: string[];
@@ -19,8 +23,42 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: 'local-web-clipper',
+    slug: 'solbook-core',
     number: '01',
+    type: 'Rust systems',
+    name: 'Solbook Core',
+    title: 'A deterministic matching engine with a Rust core and learning terminal.',
+    summary:
+      'An in-memory SOL/USDC order book with exact decimal validation, price-time priority, structured events, deterministic replay, and a web interface for exploring how the engine behaves.',
+    tags: ['Rust', 'Matching engine', 'Axum', 'Property testing'],
+    image: '/projects/solbook-core.webp',
+    imageAlt: 'Solbook market chart, order entry form, and live order book',
+    imageWidth: 1440,
+    imageHeight: 661,
+    imageCaption: 'Learning terminal backed by the live Rust matching engine.',
+    repositoryNote: 'The repository is private while I continue refining the project.',
+    problem:
+      'I wanted to understand order-book behavior through a core small enough to reason about, but strict enough that fills, ordering, and replay could be checked instead of hand-waved.',
+    contribution: [
+      'Built typed market rules for prices, quantities, order IDs, validation, and structured errors.',
+      'Implemented limit and market orders, FIFO price-time matching, partial fills, cancellation, snapshots, events, and deterministic replay.',
+      'Added an Axum HTTP adapter and a Next.js learning terminal for submitting orders, changing market scenarios, and inspecting the live book.',
+    ],
+    decisions: [
+      'Use exact decimal arithmetic for engine values instead of floating-point amounts.',
+      'Keep the matching engine single-threaded and in memory so ordering stays explicit and deterministic.',
+      'Separate the core library from HTTP, serialization, and UI adapters.',
+      'Use sequence numbers, invariant checks, property tests, benchmarks, and fuzz targets to make behavior measurable.',
+    ],
+    verification: [
+      'All 44 unit, integration, property, and documentation tests pass with the locked dependency graph.',
+      'Clippy passes across all targets and features with warnings denied.',
+      'Replay tests confirm the same command sequence produces the same events and final book state.',
+    ],
+  },
+  {
+    slug: 'local-web-clipper',
+    number: '02',
     type: 'Browser extension',
     name: 'Local Web Clipper',
     title: 'Save web content as Markdown without requiring Obsidian.',
@@ -28,6 +66,11 @@ export const projects: Project[] = [
       'A fork of Obsidian Web Clipper with local-folder, Downloads, and Clipboard destinations added without rewriting the extraction and template pipeline.',
     tags: ['TypeScript', 'Browser extensions', 'File System Access API'],
     repository: 'https://github.com/DigitalOutbreak/local-web-clipper',
+    image: '/projects/local-web-clipper.webp',
+    imageAlt: 'Local Web Clipper destination settings for local folder, Downloads, and Clipboard output',
+    imageWidth: 1150,
+    imageHeight: 654,
+    imageCaption: 'Destination controls in the built browser extension.',
     problem:
       'The upstream clipper produces useful Markdown, but its normal workflow assumes Obsidian. I wanted the same extraction and template behavior with destinations that also work for plain local files.',
     contribution: [
@@ -49,7 +92,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'cramforge',
-    number: '02',
+    number: '03',
     type: 'Study tooling',
     name: 'CramForge',
     title: 'Turn DRM-free EPUBs into local reading and study material.',
@@ -57,6 +100,11 @@ export const projects: Project[] = [
       'A local-first Next.js starter that imports owned books, exposes chapter content, and creates Markdown study packs without bundling private books or locking users to one model provider.',
     tags: ['Next.js', 'TypeScript', 'EPUB', 'Local-first'],
     repository: 'https://github.com/DigitalOutbreak/cramforge',
+    image: '/projects/cramforge.webp',
+    imageAlt: 'CramForge local-first study library home screen',
+    imageWidth: 1150,
+    imageHeight: 654,
+    imageCaption: 'The empty, local-first study library before a user imports a book.',
     problem:
       'I wanted a reusable study workspace for books I own without checking copyrighted source material into a public repository or requiring one AI provider.',
     contribution: [
@@ -77,7 +125,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'workflow',
-    number: '03',
+    number: '04',
     type: 'Developer tooling',
     name: 'Workflow',
     title: 'Reusable project scaffolding for AI-assisted coding.',
@@ -86,6 +134,11 @@ export const projects: Project[] = [
     tags: ['Agent skills', 'npm', 'Project scaffolding'],
     repository: 'https://github.com/DigitalOutbreak/workflow',
     packageUrl: 'https://www.npmjs.com/package/@digitaloutbreak/workflow',
+    image: '/projects/workflow.webp',
+    imageAlt: 'Workflow installation and project-scaffolding documentation site',
+    imageWidth: 1150,
+    imageHeight: 656,
+    imageCaption: 'Installation and project-scaffolding documentation.',
     problem:
       'Starting projects with different coding agents kept producing the same missing context, inconsistent setup, and delivery questions. I wanted one repeatable starting point that still leaves room for the project itself.',
     contribution: [
@@ -106,7 +159,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'world-of-doors',
-    number: '04',
+    number: '05',
     type: 'Client work',
     name: 'World of Doors',
     title: 'Website and internal tools for an operating service business.',
@@ -116,6 +169,9 @@ export const projects: Project[] = [
     live: 'https://worldofdoors.org',
     image: '/projects/world-of-doors.png',
     imageAlt: 'World of Doors website shown on a desktop browser',
+    imageWidth: 1200,
+    imageHeight: 760,
+    imageCaption: 'Public production website.',
     problem:
       'The business needs a trustworthy public site that generates local leads, plus clearer internal workflows after a customer submits a form or calls.',
     contribution: [
@@ -137,7 +193,7 @@ export const projects: Project[] = [
 ];
 
 export const featuredProjects = [
+  projects.find((project) => project.slug === 'solbook-core')!,
   projects.find((project) => project.slug === 'local-web-clipper')!,
-  projects.find((project) => project.slug === 'cramforge')!,
   projects.find((project) => project.slug === 'world-of-doors')!,
 ];

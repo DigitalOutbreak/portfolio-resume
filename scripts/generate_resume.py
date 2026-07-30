@@ -240,6 +240,12 @@ def build_resume() -> None:
     story += section_heading("Selected Projects", styles["section"])
     projects = [
         (
+            "Solbook Core",
+            "Rust, Axum, matching engines",
+            "Built a deterministic matching engine with exact decimal validation, FIFO price-time priority, structured events, replay tests, and a web learning terminal.",
+            "https://www.joeyalvarado.dev/projects/solbook-core",
+        ),
+        (
             "Local Web Clipper",
             "TypeScript, browser extensions",
             "Added local-folder, Downloads, and Clipboard destinations while preserving the upstream extraction and template pipeline.",
@@ -250,12 +256,6 @@ def build_resume() -> None:
             "Next.js, TypeScript, EPUB",
             "Built a local-first starter that imports DRM-free EPUBs and creates portable Markdown study packs.",
             "https://github.com/DigitalOutbreak/cramforge",
-        ),
-        (
-            "Workflow",
-            "npm, agent skills, project scaffolding",
-            "Published reusable project context, feature workflows, cleanup tools, and delivery guidance for multiple coding agents.",
-            "https://github.com/DigitalOutbreak/workflow",
         ),
         (
             "World of Doors",

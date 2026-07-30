@@ -41,12 +41,19 @@ const { project } = Astro.props as Props;
           </a>
         )}
       </div>
+      {project.repositoryNote && <p class="project-note">{project.repositoryNote}</p>}
     </header>
 
     {project.image && (
       <figure class="case-study-image">
-        <img src={project.image} alt={project.imageAlt ?? ''} width="1200" height="760" />
-        <figcaption>Production website</figcaption>
+        <img
+          src={project.image}
+          alt={project.imageAlt ?? ''}
+          width={project.imageWidth ?? 1200}
+          height={project.imageHeight ?? 675}
+          decoding="async"
+        />
+        {project.imageCaption && <figcaption>{project.imageCaption}</figcaption>}
       </figure>
     )}
 

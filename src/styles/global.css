@@ -220,7 +220,7 @@ li::marker { color: #78716c; }
 }
 .page-hero { margin-bottom: 56px; }
 .page-hero h1 { margin-bottom: 12px; }
-.page-hero > p:last-child {
+.page-hero > p:not(.eyebrow):not(.project-note) {
   color: var(--muted);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.05rem;
@@ -244,6 +244,24 @@ li::marker { color: #78716c; }
   gap: 3px;
 }
 .project h2 { font-size: 1.15rem; margin-bottom: 8px; }
+.project-preview {
+  aspect-ratio: 16 / 9;
+  background: #151412;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+.project-preview img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+  transition: transform 180ms ease;
+  width: 100%;
+}
+.project-preview:hover img { transform: scale(1.012); }
 .project-body > p:not(.project-kicker) {
   color: var(--body);
   font-family: Georgia, 'Times New Roman', serif;
@@ -324,6 +342,11 @@ li::marker { color: #78716c; }
 
 .case-study { max-width: 640px; }
 .project-actions { margin-top: 22px; }
+.project-note {
+  color: var(--muted);
+  font-size: .82rem;
+  margin: 12px 0 0;
+}
 .case-study-image {
   margin: 0 0 52px;
 }
