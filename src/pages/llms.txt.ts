@@ -35,7 +35,7 @@ ${projectLinks}
 
 - [GitHub](https://github.com/DigitalOutbreak): Public source code and project repositories
 - [LinkedIn](https://www.linkedin.com/in/joeyalvarado): Professional profile and work history
-- [X](https://x.com/realjoeyalvara): Software, technology, and personal updates
+- [X](https://x.com/joeydgafos): Software, technology, and personal updates
 
 ## Writing
 
