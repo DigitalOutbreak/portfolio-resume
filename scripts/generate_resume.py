@@ -240,7 +240,7 @@ def build_resume() -> None:
     story += section_heading("Selected Projects", styles["section"])
     projects = [
         (
-            "Solbook Core",
+            "Rust Order Book & Matching Engine",
             "Rust, Axum, matching engines",
             "Built a deterministic matching engine with exact decimal validation, FIFO price-time priority, structured events, replay tests, and a web learning terminal.",
             "https://www.joeyalvarado.dev/projects/solbook-core",
