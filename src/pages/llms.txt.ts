@@ -16,7 +16,7 @@ const content = `# Joey Alvarado
 
 Joey's professional background combines hands-on development with project delivery. He builds client websites, dashboards, and CRM workflows, and he uses focused software projects to demonstrate systems thinking, testing, and backend development.
 
-Primary skills include Rust, TypeScript, JavaScript, Python, HTML, CSS, React, Next.js, Astro, SQLite, Git, GitHub, and Figma. Joey is open to software development opportunities.
+Primary skills include Rust, TypeScript, JavaScript, Python, HTML, CSS, React, Next.js, Astro, SQL, Git, GitHub, and Figma. Joey is open to software development opportunities.
 
 ## Candidate profile
 
@@ -35,7 +35,7 @@ ${projectLinks}
 
 - [GitHub](https://github.com/DigitalOutbreak): Public source code and project repositories
 - [LinkedIn](https://www.linkedin.com/in/joeyalvarado): Professional profile and work history
-- [X](https://x.com/joeydgafos): Software, technology, and personal updates
+- [X](https://x.com/joeynalvarado): Software, technology, and personal updates
 
 ## Writing
 

@@ -4,7 +4,7 @@ const personId = `${siteUrl}/about#joey-alvarado`;
 const sameAs = [
   'https://github.com/DigitalOutbreak',
   'https://www.linkedin.com/in/joeyalvarado',
-  'https://x.com/joeydgafos',
+  'https://x.com/joeynalvarado',
 ];
 
 const person = {
